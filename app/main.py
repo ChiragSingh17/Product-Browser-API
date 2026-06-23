@@ -1,7 +1,12 @@
 from fastapi import FastAPI
 import psycopg2
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = FastAPI()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 @app.get("/products")
 def get_products(
@@ -10,13 +15,7 @@ def get_products(
     cursor_updated_at: str = None
     ):
 
-    conn = psycopg2.connect(
-        database="product_db",
-        user="postgres",
-        password="Chirag",
-        host="localhost",
-        port="5432"
-    )
+    conn = psycopg2.connect(DATABASE_URL)
 
     cursor = conn.cursor()
 

@@ -1,17 +1,15 @@
 # Product Browser API
 
 ## Tech Stack
-
 - FastAPI
 - PostgreSQL
 - Psycopg2
 
 ## Features
-
-- Browse 200,000 products
+- 200,000 products
 - Category filtering
 - Cursor pagination
-- High performance indexing
+- Indexed queries
 
 ## Run
 
